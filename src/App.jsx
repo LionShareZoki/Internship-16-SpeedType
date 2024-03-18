@@ -7,6 +7,22 @@ import RegularGameMode from "./pages/NewGamePage/GameModes/RegularGameMode";
 function App() {
   return (
     <>
+      <GameProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/practice" element={<PracticePage />} />
+            <Route
+              path="/regular"
+              element={<RegularGameMode instantDeath={false} />}
+            />
+            <Route
+              path="/instant-death"
+              element={<RegularGameMode instantDeath={true} />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </GameProvider>
     </>
   );
 }
